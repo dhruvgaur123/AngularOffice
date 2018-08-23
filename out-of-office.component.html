@@ -1,0 +1,26 @@
+<mat-form-field style="margin-right: 30px; width: 235px">
+  <input matInput [matDatepicker]="picker" placeholder="Start Date" (dateChange)="test($event)" [(ngModel)]="startDate">
+  <mat-error id="startDateValidation"></mat-error>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field style="width: 235px">
+      <input matInput [matDatepicker]="picker2" placeholder="End Date" (dateChange)="test1($event)" [(ngModel)]="endDate">
+      <mat-error id="endDateValidation"></mat-error>
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+   </mat-form-field>
+    <mat-form-field style="width: 475px;">
+      <input [disabled] ="true" matInput placeholder="Delegate To" [(ngModel)]="delegatedUser" />
+      <mat-error id="delegateUserValidation"></mat-error>
+    </mat-form-field>
+    <mat-icon style="cursor: pointer; font-size: 25px; height: 30px; width: 30px;" (click)="openDialog()"  [matTooltip]="'Search'">search</mat-icon>
+    <mat-form-field class="mdl-cell mdl-cell--12-col">
+      <textarea required matInput placeholder="Message" style="min-height: 140px;" [(ngModel)]="reason" ></textarea>
+      <mat-error id="reasonValidation"></mat-error>
+    </mat-form-field>
+    <center><div>
+      <button mat-raised-button color="primary" (click)="autoDelegate()">Delegate</button>
+    </div>
+  </center>
+  
